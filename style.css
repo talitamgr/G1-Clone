@@ -17,6 +17,9 @@ h1,h2,li a{
 a{
     text-decoration: none;
 }
+p, li{
+    line-height: 1.7;
+}
 
 header{
     height: auto;
@@ -30,6 +33,9 @@ header{
 .link-nav{
     background: transparent ;
     padding: .75em ; 
+}
+.menu{
+    display: none;
 }
 .link-logo{
     
@@ -46,6 +52,9 @@ header{
    color: white;
    
 }
+.tab-search{
+    display: none;
+}
 .img-nav{
     width: 1.3em ;
     height: 1.3em;
@@ -55,6 +64,14 @@ header{
 .img-g1{
     max-width: 40px; 
       
+}
+
+.title h2{
+    text-transform: uppercase;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    margin-top:2em;
 }
 
 
@@ -175,8 +192,9 @@ footer{
         display: grid;
         grid-template-columns: 49% 49%;
         grid-gap:2%;
-        grid-template-rows: repeat(2, auto);
-        margin: 8%;
+        grid-template-rows: 49% 49%;
+        margin: 7%;
+        margin-top: 4em;
         box-sizing: border-box;
         max-width: 85%;
     }
@@ -184,9 +202,10 @@ footer{
         grid-row: 1/3;
         grid-column: 1/2;
         padding: 20% 1em;
+        box-sizing: border-box;
     }
     .main-curiosity{
-        padding: 10em 1em 1em;
+        padding: 10em 1em 0;
         box-sizing: border-box;
     }
     .main-curiosity h2, .main-curiosity a{
@@ -196,7 +215,7 @@ footer{
         grid-column: 2/3;
         grid-row: 1/2;
         background-image:linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0,0,0,0)), url(Imagens/sexiest.webp);
-       background-size: 200%;
+        background-size: 200%;
         background-position: 90% 0%;
         background-repeat: no-repeat;
         cursor: pointer;
@@ -220,22 +239,29 @@ footer{
         transition: all 1s;
     }
     .news,.button{
-        margin: 8%;
+        margin: 0 8% 8% 0;
         max-width: 60%;
     }
+    .new{
+        grid-template-rows: 80% 17%;
+    }
     footer{
+        padding: 1.125em 1em .75em;
         display: grid;
         grid-template-columns: 50% 50%;
-        grid-template-rows: repeat(2, auto);
+        grid-template-rows: 40px auto;
     }
     .footer-div1{
         grid-column: 1/2;
         grid-row: 1/2;
+        display: flex;
+    }
+    .last-news{
+        padding: 1.5em;
     }
     .footer-div2{
         grid-column: 1/2;
         grid-row: 2/3;
-        
     }
     .footer-div2 p{
         margin: 0;
@@ -247,13 +273,12 @@ footer{
         display: flex;
         justify-content: flex-end;
         align-items: flex-end; 
-        margin: 0;
+        margin: .2em 0;
         
     }
     .footer-div3 li{
-        /* align-items: flex-end; */
-        border-right: 1px solid white;
-        padding: .2rem .3rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.4);
+        padding: 0 .3em;
         text-align: right;
         font-size: .8em;
     }
@@ -261,7 +286,7 @@ footer{
         border: 0;
     }
 }
-@media screen and (max-width:550px) {
+@media screen and (max-width:40.625em) {
     .main-new{
         display: none;
     }
@@ -305,3 +330,66 @@ footer{
     }
 }
     
+@media screen and (min-width:67.25em) {
+    header{
+     padding-right: 1em;
+     padding-left: 1em;
+   
+    }
+    .link-nav{
+        display: flex;
+        align-items: center;
+    }
+    .menu{
+        text-transform: uppercase;
+        display: block;
+        color: white;
+        font-weight: 700;
+        margin: 0;
+        padding-left: .2em;
+    }
+    .img-g1{
+        padding-left: 3.5em;
+    }
+    .logo-footer img{
+        padding-left: 1em;
+    }
+    .link-search{
+        width: 1px;
+        height: 1px;
+        display: none;
+    }
+     .tab-search{
+         display:block;
+     }
+     .tab-search input{
+         background-color: rgba(139, 0, 0, 0.5);
+         width: 10em;
+         padding-left: 1.7em;
+        height: 2em;
+        border: 1px 1px 1px 0 solid #707070;
+        border-radius: 4px;
+        color: white;
+     }
+     .icon-search{
+         position: relative;
+         left:-7.5em;
+         margin: .3em 0;
+        
+     }
+     .tab-search input::placeholder{
+        text-align: center;
+         font-weight: bold;
+         color: white;
+     }
+     .tab-search input:focus{
+         background-color: white;
+         color: black;
+         outline: none;
+         border: transparent;
+     }
+     .tab-search input:focus + .icon-search{
+         color: #707070;
+         
+     }
+    }
